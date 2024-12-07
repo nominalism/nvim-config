@@ -1,5 +1,5 @@
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "solargraph", "ts_ls" }  -- Altere "tsserver" para "ts_ls"
+  ensure_installed = { "lua_ls", "solargraph", "ts_ls", "cssls" }  -- Altere "tsserver" para "ts_ls"
 })
 
 local lspconfig = require('lspconfig')
@@ -32,6 +32,13 @@ require("lspconfig").solargraph.setup({})
 require("lspconfig").ts_ls.setup({})  -- Altere "tsserver" para "ts_ls"
 require("lspconfig").gopls.setup({})
 require("lspconfig").tailwindcss.setup({})
+require("lspconfig").cssls.setup({
+  settings = {
+    css = {
+      validate = true,  -- Ativa a validação de CSS
+    },
+  },
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
