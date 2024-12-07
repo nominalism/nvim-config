@@ -4,7 +4,7 @@ Minha configuração atual do nvim com LazyVim
 
 ## Requisitos
 
-- **Neovim 0.9+**: A configuração SÓ funciona em uma versão maior que 0.9, se tentar em uma anterior NÃO vai funcioanar
+- **Neovim 0.9+**: A configuração SÓ funciona em uma versão maior que 0.9, se tentar em uma anterior NÃO vai funcionar
 
 
 ## Instalação
