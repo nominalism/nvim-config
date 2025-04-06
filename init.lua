@@ -1,3 +1,6 @@
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -19,28 +22,3 @@ require("core.options")
 require("core.keymaps")
 require("core.plugins")
 require("core.plugin_config")
-
-
-local null_ls = require("null-ls")
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.prettier.with({
-      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "css" },
-    }),
-    null_ls.builtins.formatting.google_java_format.with({
-      filetypes = { "java" },
-    }),
-    null_ls.builtins.formatting.black.with({
-      filetypes = { "python" },  -- Adiciona Python
-    }),
-  },
-  on_attach = function(client, bufnr)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.api.nvim_command("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-    end
-  end,
-})
-
-
-

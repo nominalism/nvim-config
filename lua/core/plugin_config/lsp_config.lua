@@ -1,5 +1,5 @@
 require("mason-lspconfig").setup({
-  ensure_installed = {  }  -- Altere "tsserver" para "ts_ls"
+  ensure_installed = { "rust_analyzer", "ts_ls", "lua_ls" } 
 })
 
 local lspconfig = require('lspconfig')
@@ -29,16 +29,17 @@ require("lspconfig").lua_ls.setup {
 }
 
 require("lspconfig").solargraph.setup({})
-require("lspconfig").ts_ls.setup({})  -- Altere "tsserver" para "ts_ls"
+require("lspconfig").ts_ls.setup({})  
 require("lspconfig").gopls.setup({})
 require("lspconfig").tailwindcss.setup({})
 require("lspconfig").cssls.setup({
   settings = {
     css = {
-      validate = true,  -- Ativa a validação de CSS
+      validate = true,  
     },
   },
 })
+require("lspconfig").rust_analyzer.setup({}) 
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -66,4 +67,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
-

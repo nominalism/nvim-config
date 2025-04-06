@@ -12,3 +12,5 @@ require("core.plugin_config.oil")
 require("core.plugin_config.markdown_preview")
 require("core.plugin_config.swagger-preview")
 require("core.plugin_config.nvimtree_config")
+require("core.plugin_config.conform") -- Added conform config
+require("core.plugin_config.lint") -- Added lint config

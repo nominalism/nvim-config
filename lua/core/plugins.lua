@@ -30,7 +30,8 @@ require("lazy").setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
-  "jose-elias-alvarez/null-ls.nvim",
+  "stevearc/conform.nvim", -- Added conform.nvim for formatting
+  "mfussenegger/nvim-lint", -- Added nvim-lint for linting
   {
     "vinnymeller/swagger-preview.nvim",
     run = "npm install -g swagger-ui-watcher",
@@ -50,4 +51,3 @@ require("lazy").setup({
     end 
   },
 })
-
