@@ -2,13 +2,15 @@
 local lint = require("lint")
 
 lint.linters_by_ft = {
-  javascript = { "eslint_d" }, -- Use eslint_d for better performance
+  javascript = { "eslint_d" },
   typescript = { "eslint_d" },
   javascriptreact = { "eslint_d" },
   typescriptreact = { "eslint_d" },
-  python = { "flake8" }, -- Example for Python
-  -- Add other filetypes and linters as needed
-}
+  svelte = { "eslint_d" }, 
+  python = { "flake8" },
+  rust = { "clippy" }, 
+  go = { "golangci-lint" }, 
+} 
 
 -- Configure linting to run on specific events
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

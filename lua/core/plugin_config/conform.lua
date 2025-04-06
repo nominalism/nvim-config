@@ -8,14 +8,14 @@ conform.setup({
     typescript = { "prettier" },
     javascriptreact = { "prettier" },
     typescriptreact = { "prettier" },
+    svelte = { "prettier" },
     css = { "prettier" },
     html = { "prettier" },
     json = { "prettier" },
     yaml = { "prettier" },
     markdown = { "prettier" },
     rust = { "rustfmt" },
-    python = { "black" }, -- Example for Python
-    -- Add other filetypes and formatters as needed
+    python = { "black" }, 
   },
 
   format_on_save = {
