@@ -2,6 +2,13 @@
 local conform = require("conform")
 
 conform.setup({
+  formatters = {
+    ["zig fmt"] = {
+      command = "zig",
+      args = { "fmt", "--stdin" },
+      stdin = true,
+    }
+  },
   formatters_by_ft = {
     lua = { "stylua" },
     javascript = { "prettier" },
@@ -15,13 +22,14 @@ conform.setup({
     yaml = { "prettier" },
     markdown = { "prettier" },
     rust = { "rustfmt" },
-    python = { "black" }, 
+    python = { "black" },
+    zig = { "zig fmt" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true, -- Fallback to LSP formatting if conform formatter fails
+    timeout_ms = 2000,
+    lsp_fallback = true,
   },
 })
 

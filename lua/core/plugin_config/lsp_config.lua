@@ -1,5 +1,5 @@
 require("mason-lspconfig").setup({
-  ensure_installed = { "rust_analyzer", "ts_ls", "lua_ls" } 
+  ensure_installed = { "rust_analyzer", "ts_ls", "lua_ls", "zls" } 
 })
 
 local lspconfig = require('lspconfig')
