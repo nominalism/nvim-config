@@ -1,5 +1,5 @@
 require("mason-lspconfig").setup({
-  ensure_installed = { "rust_analyzer", "ts_ls", "lua_ls", "zls" } 
+  ensure_installed = { "ts_ls", "lua_ls", "zls" } 
 })
 
 local lspconfig = require('lspconfig')
@@ -9,7 +9,10 @@ local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities = vim.tbl_deep_extend(
   'force',
   lsp_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
+  require('cmp_nvim_lsp').default_capabilities(),
+  {
+    offsetEncoding = { "utf-8" }
+  }
 )
 
 require("lspconfig").lua_ls.setup {
@@ -39,11 +42,22 @@ require("lspconfig").cssls.setup({
     },
   },
 })
-require("lspconfig").rust_analyzer.setup({}) 
+
+-- Desativar rust-analyzer para evitar conflito com rustaceanvim
+require("lspconfig").rust_analyzer.setup({
+  -- Configuração vazia para garantir que não seja iniciado pelo lspconfig
+  autostart = false,
+  filetypes = {},  -- Lista vazia de filetypes impede a ativação
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
+    -- Ignorar arquivos Rust, pois eles serão gerenciados pelo rustaceanvim
+    if vim.bo[ev.buf].filetype == "rust" then
+      return
+    end
+    
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 

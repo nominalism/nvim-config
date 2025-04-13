@@ -1,14 +1,11 @@
 require("mason").setup({
   ensure_installed = {
-  
-    "stylua",       
-    "prettier",     
-    "rustfmt",      
-    "black",        
-
-   
-    "eslint_d",     
-    "flake8",    
+    "stylua",
+    "prettier",
+    "black",
+    "eslint_d",
+    "flake8",
+    "golangci-lint",
 
 
   }

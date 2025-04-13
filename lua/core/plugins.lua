@@ -15,6 +15,12 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-surround",
   "stevearc/oil.nvim",
+  -- rust tools
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6",
+    lazy = false,
+  },
   -- completion
   {
     "hrsh7th/nvim-cmp",
@@ -26,11 +32,11 @@ require("lazy").setup({
     },
   },
   "rafamadriz/friendly-snippets",
-  "github/copilot.vim",
+  -- "github/copilot.vim",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
-  "stevearc/conform.nvim", -- Added conform.nvim for formatting
+  "stevearc/conform.nvim",  -- Added conform.nvim for formatting
   "mfussenegger/nvim-lint", -- Added nvim-lint for linting
   {
     "vinnymeller/swagger-preview.nvim",
@@ -41,13 +47,14 @@ require("lazy").setup({
     run = "cd app && npm install",
   },
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.4",
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.4",
     dependencies = { "nvim-lua/plenary.nvim" }
   },
-  { 
-    "windwp/nvim-autopairs", 
-    config = function() 
-      require('nvim-autopairs').setup{} 
-    end 
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require('nvim-autopairs').setup {}
+    end
   },
 })
