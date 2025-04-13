@@ -10,6 +10,7 @@ conform.setup({
     }
   },
   formatters_by_ft = {
+    go              = { "gofmt" },
     lua             = { "stylua" },
     javascript      = { "prettier" },
     typescript      = { "prettier" },
@@ -29,7 +30,7 @@ conform.setup({
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 2000,
-    lsp_fallback = true,
+    lsp_fallback = false,
   },
 })
 
