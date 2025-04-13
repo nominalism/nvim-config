@@ -2,7 +2,7 @@ require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   "tpope/vim-commentary",
   "mattn/emmet-vim",
-  "nvim-tree/nvim-tree.lua",
+  --  "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "ellisonleao/gruvbox.nvim",
   "dracula/vim",
@@ -49,7 +49,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     branch = '0.1.x',
-    dependencies = { 
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim"
     }
