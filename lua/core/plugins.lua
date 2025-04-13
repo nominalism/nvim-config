@@ -48,8 +48,11 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.4",
-    dependencies = { "nvim-lua/plenary.nvim" }
+    branch = '0.1.x',
+    dependencies = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim"
+    }
   },
   {
     "windwp/nvim-autopairs",
