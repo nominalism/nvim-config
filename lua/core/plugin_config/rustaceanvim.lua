@@ -23,7 +23,7 @@ vim.g.rustaceanvim = {
       vim.keymap.set("n", "<leader>rn", function() vim.cmd.RustLsp("rename") end, opts)
       vim.keymap.set({ "n", "v" }, "<leader>ca", function() vim.cmd.RustLsp("codeAction") end, opts)
       vim.keymap.set("n", "gr", function() vim.cmd.RustLsp("findReferences") end, opts)
-      vim.keymap.set("n", "<leader>f", function() vim.cmd.RustLsp("format") end, opts)
+      vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
       vim.keymap.set("n", "<leader>rr", function() vim.cmd.RustLsp("runnables") end, opts)
       vim.keymap.set("n", "<leader>rd", function() vim.cmd.RustLsp("debuggables") end, opts)
       vim.keymap.set("n", "<leader>re", function() vim.cmd.RustLsp("expandMacro") end, opts)
