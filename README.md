@@ -1,5 +1,5 @@
 # Configuração do Neovim com LazyVim
-
+:)
 Minha configuração atual do nvim com LazyVim
 
 ## Requisitos
